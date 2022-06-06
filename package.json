@@ -15,7 +15,8 @@
   "node-red": {
     "version": ">=2.0.0",
     "nodes": {
-      "translator": "translator/translator.js"
+      "translator": "translator/translator.js",
+      "dictionary-lookup": "dictionary-lookup/dictionary-lookup.js"
     },
     "author": "Tsung Jui Wang",
     "license": "MIT",
