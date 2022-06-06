@@ -31,19 +31,8 @@ class TranslatorBase {
     }
 
     /*********** Concrete method ***********/
-
-    checkInputMode({ inputMode, imageFilePath, imageUrl }) {
-        if (inputMode === this.INPUT_MODE.url ) {
-            if (!imageUrl) throw new Error('imageUrl must not be empty');
-        } else {
-            if (!imageFilePath || !path.isAbsolute(imageFilePath)) throw new Error('Image file path must be a string of an absolute path to local file system');
-        }
-    }
-
     async analyze(options) {
-        // Test input mode
-        // this.checkInputMode(options);
-        // Clean and check features for different services
+        // Construct the request header for different services
         this.preProcess(options);
         let config;
         config = {

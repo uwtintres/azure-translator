@@ -10,13 +10,13 @@ class TranslatorDriver extends TranslatorBase {
 
     preProcess(options) {
         if (!Array.isArray(options.requestArray)) throw new Error('msg.payload should be an array');
-        // Process toLan
+        // Process toLan and construct query string
         let toLan = options.toLan.trim().split(',');
         toLan = toLan.map(lan => `to=${lan}`);
         options.toLan = toLan.join('&');
         options.requestBody = options.requestArray;
-        // Process fromLan
-        options.fromLan = options.fromLan ? `&from=${options.fromLan}` : '';
+        // Process fromLan and construct query string
+        options.fromLan = options.fromLan ? `from=${options.fromLan}` : '';
     }
 
     async analyzeInternal({ requestBody,
@@ -34,7 +34,7 @@ class TranslatorDriver extends TranslatorBase {
                               allowFallback,
                               config }) {
         this.setStatus({ fill: 'green', shape: 'dot', text: 'Detecting' });
-        const res = await axios.post(`${this.baseUrl}?api-version=3.0${fromLan}&${toLan}&textType=${textType}&category=${category}&profanityAction=${profanityAction}&profanityMarker=${profanityMarker}&includeAlignment=${includeAlignment}&includeSentenceLength=${includeSentenceLength}&suggestedFrom=${suggestedFrom}&fromScript=${fromScript}&toScript=${toScript}&allowFallback=${allowFallback}`,
+        const res = await axios.post(`${this.baseUrl}?api-version=3.0&${fromLan}&${toLan}&textType=${textType}&category=${category}&profanityAction=${profanityAction}&profanityMarker=${profanityMarker}&includeAlignment=${includeAlignment}&includeSentenceLength=${includeSentenceLength}&suggestedFrom=${suggestedFrom}&fromScript=${fromScript}&toScript=${toScript}&allowFallback=${allowFallback}`,
             requestBody,
             config);
         return res.data;
