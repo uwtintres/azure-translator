@@ -1,0 +1,128 @@
+<script type="text/javascript">
+    RED.nodes.registerType('translator',{
+        category: 'Azure Translator',
+        color: '#008AD7',
+        defaults: {
+            name: { value: ''  },
+            toLan: { value: '', required: true },
+            fromLan: { value: '' },
+            textType: { value: 'plain' },
+            category: { value: '' },
+            profanityAction: { value: 'NoAction' },
+            profanityMarker: { value: 'Asterisk' },
+            includeAlignment: { value: 'no' },
+            includeSentenceLength: { value: 'no' },
+            suggestedFrom: { value: '' },
+            fromScript: { value: '' },
+            toScript: { value: '' },
+            allowFallback: { value: 'yes' },
+        },
+        credentials: {
+            key: { type: 'password' },
+            region: { type: 'text' }
+        },
+        inputs: 1,
+        outputs: 1,
+        label: function() {
+            if (this.name) return this.name;
+            return 'translator';
+        },
+        icon: 'font-awesome/fa-exchange',
+    });
+</script>
+
+<script type="text/html" data-template-name="translator">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name </label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div id="node-input-div-toLan" class="form-row">
+        <label for="node-input-toLan"><i class="fa fa-tag"></i> To language </label>
+        <input type="text" id="node-input-toLan" placeholder="To language">
+    </div>
+
+    <div id="node-input-div-fromLan" class="form-row">
+        <label for="node-input-fromLan"><i class="fa fa-tag"></i> From language </label>
+        <input type="text" id="node-input-fromLan" placeholder="From language">
+    </div>
+
+    <div id="node-input-div-textType" class="form-row">
+        <label for="node-input-textType"><i class="fa fa-tag"></i> Text type </label>
+        <select name="node-input-textType" id="node-input-textType">
+            <option value="plain"> Plain </option>
+            <option value="html"> HTML </option>
+        </select>
+    </div>
+
+    <div id="node-input-div-category" class="form-row">
+        <label for="node-input-category"><i class="fa fa-tag"></i> Category </label>
+        <input type="text" id="node-input-category" placeholder="A string specifying the category (domain) of the translation">
+    </div>
+
+    <div id="node-input-div-profanityAction" class="form-row">
+        <label for="node-input-profanityAction"><i class="fa fa-tag"></i> Profanity action </label>
+        <select name="node-input-profanityAction" id="node-input-profanityAction">
+            <option value="NoAction"> NoAction </option>
+            <option value="Marked"> Marked </option>
+            <option value="Deleted"> Deleted </option>
+        </select>
+    </div>
+
+    <div id="node-input-div-profanityMarker" class="form-row">
+        <label for="node-input-profanityMarker"><i class="fa fa-tag"></i> Profanity Marker </label>
+        <select name="node-input-profanityMarker" id="node-input-profanityMarker">
+            <option value="Asterisk"> Asterisk </option>
+            <option value="Tag"> Tag </option>
+        </select>
+    </div>
+
+    <div id="node-input-div-includeAlignment" class="form-row">
+        <label for="node-input-includeAlignment"><i class="fa fa-tag"></i> Include alignment </label>
+        <select name="node-input-includeAlignment" id="node-input-includeAlignment">
+            <option value="yes"> Yes </option>
+            <option value="no"> No </option>
+        </select>
+    </div>
+
+    <div id="node-input-div-includeSentenceLength" class="form-row">
+        <label for="node-input-includeSentenceLength"><i class="fa fa-tag"></i> Include sentence length </label>
+        <select name="node-input-includeSentenceLength" id="node-input-includeSentenceLength">
+            <option value="yes"> Yes </option>
+            <option value="no"> No </option>
+        </select>
+    </div>
+
+    <div id="node-input-div-suggestedFrom" class="form-row">
+        <label for="node-input-suggestedFrom"><i class="fa fa-tag"></i> Suggested from </label>
+        <input type="text" id="node-input-suggestedFrom" placeholder="Specifies a fallback language if the language of the input text can't be identified">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-key"><i class="fa fa-tag"></i> Key </label>
+        <input type="password" id="node-input-key" placeholder="Your beautiful key">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-region"><i class="fa fa-tag"></i> Region </label>
+        <input type="text" id="node-input-region" placeholder="Region">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="translator">
+    <p> image </p>
+    <h3>Outputs</h3>
+    <dl class="message-properties">
+        <dt> msg.payload
+            <span class="property-type"> Array </span>
+        </dt>
+        <dd>
+            An array of objects. There are three valid fields for the object: <code> id </code>, <code> text </code> and <code> language </code>(optional).<br/>
+            For more information, please refer to <a href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-2-Preview-2/operations/KeyPhrases"> Official document </a>.
+        </dd>
+    </dl>
+
+    <p> showStats is an optional input to specify if the response should contain request and document level statistics. The default is false.</p>
+    <p> loggingOptOut is an optional input to specify if you opt-out of having your text input logged for troubleshooting. The default is false.</p>
+    <p> modelVersion is an optional input to specify the version of the AI model. The default value is "latest".</p>
+</script>

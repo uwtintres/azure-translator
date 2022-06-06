@@ -1,0 +1,26 @@
+{
+  "name": "azure-translator",
+  "version": "1.0.0",
+  "description": "Node-red nodes for Microsoft Azure Translator Services",
+  "keywords": [
+    "Javascript",
+    "Azure",
+    "Translator",
+    "Dictionary lookup",
+    "node-red"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "translator": "translator/translator.js"
+    },
+    "author": "Tsung Jui Wang",
+    "license": "MIT",
+    "dependencies": {
+      "axios": "^0.27.2"
+    }
+  }
+}
