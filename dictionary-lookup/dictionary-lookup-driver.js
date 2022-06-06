@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 const TranslatorBase = require('../utilties/translator-base');
 
-class TranslatorDriver extends TranslatorBase {
+class DictionaryLookupDriver extends TranslatorBase {
 
     constructor(node, key, region) {
         super(node, key, region);
@@ -25,4 +25,4 @@ class TranslatorDriver extends TranslatorBase {
     }
 }
 
-module.exports = TranslatorDriver;
+module.exports = DictionaryLookupDriver;

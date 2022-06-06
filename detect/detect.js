@@ -1,17 +1,15 @@
-const DictionaryLookupDriver = require('./dictionary-lookup-driver');
+const DetectDriver = require('./detect-driver');
 
 module.exports = function(RED) {
-    function dictionaryLookup(config) {
+    function detect(config) {
         RED.nodes.createNode(this, config);
         this.on('input', async (msg) => {
             try {
                 const options = {
                     requestArray: msg.payload || [],
-                    toLan: config.toLan,
-                    fromLan: config.fromLan,
                 };
 
-                const driver = new DictionaryLookupDriver(this, this.credentials.key, this.credentials.region);
+                const driver = new DetectDriver(this, this.credentials.key, this.credentials.region);
 
                 const res = await driver.run(options);
 
@@ -26,7 +24,7 @@ module.exports = function(RED) {
         });
     }
 
-    RED.nodes.registerType("dictionary-lookup", dictionaryLookup, {
+    RED.nodes.registerType("detect", detect, {
         credentials: {
             key: { type: 'password' },
             region: { type: 'text' }

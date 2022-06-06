@@ -16,7 +16,8 @@
     "version": ">=2.0.0",
     "nodes": {
       "translator": "translator/translator.js",
-      "dictionary-lookup": "dictionary-lookup/dictionary-lookup.js"
+      "dictionary-lookup": "dictionary-lookup/dictionary-lookup.js",
+      "detect": "detect/detect.js"
     },
     "author": "Tsung Jui Wang",
     "license": "MIT",
