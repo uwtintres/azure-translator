@@ -16,7 +16,7 @@ The example flow is as follows:
 
 ![Example flow](https://github.com/uwtintres/azure-translator/blob/main/img/flow.png?raw=true)
 
-The payload of the node is as follows:
+The function node contains the payload:
 
 ![Payload](https://github.com/uwtintres/azure-translator/blob/main/img/payload.png?raw=true)
 
