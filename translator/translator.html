@@ -117,12 +117,13 @@
             <span class="property-type"> Array </span>
         </dt>
         <dd>
-            An array of objects. There are three valid fields for the object: <code> id </code>, <code> text </code> and <code> language </code>(optional).<br/>
-            For more information, please refer to <a href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-2-Preview-2/operations/KeyPhrases"> Official document </a>.
+            An array of objects. There is one valid field for the object: <code> Text </code>.<br/>
+            For more information, please refer to <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate"> Official document </a>.
         </dd>
     </dl>
 
-    <p> showStats is an optional input to specify if the response should contain request and document level statistics. The default is false.</p>
-    <p> loggingOptOut is an optional input to specify if you opt-out of having your text input logged for troubleshooting. The default is false.</p>
-    <p> modelVersion is an optional input to specify the version of the AI model. The default value is "latest".</p>
+    <p>
+        toLanguage is a the only required input which specifies the language of the output text. For all the other input fields, they are documented well in
+        <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate"> official document </a>.
+    </p>
 </script>
