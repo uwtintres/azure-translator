@@ -22,6 +22,10 @@
       "detect": "detect/detect.js",
       "break-sentence": "break-sentence/break-sentence.js"
     },
+    "homepage": "https://github.com/uwtintres/node-red-azure",
+    "bugs": {
+      "url": "https://github.com/uwtintres/azure-translator/issues"
+    },
     "author": "Tsung Jui Wang",
     "license": "MIT",
     "dependencies": {
