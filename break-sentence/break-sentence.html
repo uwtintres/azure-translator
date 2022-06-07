@@ -1,9 +1,11 @@
 <script type="text/javascript">
-    RED.nodes.registerType('detect',{
+    RED.nodes.registerType('break-sentence',{
         category: 'Azure Translator',
         color: '#008AD7',
         defaults: {
             name: { value: ''  },
+            language: { value: '' },
+            script: { value: '' }
         },
         credentials: {
             key: { type: 'password' },
@@ -13,16 +15,26 @@
         outputs: 1,
         label: function() {
             if (this.name) return this.name;
-            return 'Detect';
+            return 'Break-sentence';
         },
         icon: 'font-awesome/fa-exchange',
     });
 </script>
 
-<script type="text/html" data-template-name="detect">
+<script type="text/html" data-template-name="break-sentence">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name </label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-language"><i class="fa fa-tag"></i> Language </label>
+        <input type="text" id="node-input-language" placeholder="Language tag identifying the language of the input text.">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-script"><i class="fa fa-tag"></i> Script </label>
+        <input type="text" id="node-input-script" placeholder="Script tag identifying the script used by the input text.">
     </div>
 
     <div class="form-row">
@@ -36,7 +48,7 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="detect">
+<script type="text/html" data-help-name="break-sentence">
     <h3>Outputs</h3>
     <dl class="message-properties">
         <dt> msg.payload
@@ -44,7 +56,7 @@
         </dt>
         <dd>
             An array of objects. There is one valid field for the object: <code> Text </code>.<br/>
-            For more information, please refer to <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-detect"> Official document </a>.
+            For more information, please refer to <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-break-sentence"> Official document </a>.
         </dd>
     </dl>
 </script>

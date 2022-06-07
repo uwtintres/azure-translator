@@ -7,6 +7,8 @@
     "Azure",
     "Translator",
     "Dictionary lookup",
+    "Detect",
+    "Break sentence",
     "node-red"
   ],
   "engines": {
@@ -17,7 +19,8 @@
     "nodes": {
       "translator": "translator/translator.js",
       "dictionary-lookup": "dictionary-lookup/dictionary-lookup.js",
-      "detect": "detect/detect.js"
+      "detect": "detect/detect.js",
+      "break-sentence": "break-sentence/break-sentence.js"
     },
     "author": "Tsung Jui Wang",
     "license": "MIT",
