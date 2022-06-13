@@ -1,6 +1,6 @@
 {
   "name": "@intres/azure-translator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node-red nodes for Microsoft Azure Translator Services",
   "keywords": [
     "Javascript",
