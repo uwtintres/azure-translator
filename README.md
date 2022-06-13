@@ -1,6 +1,10 @@
 ## Introduction
 **azure-translator** is a collection of nodes that translation services from [Microsoft Azure Translation Services](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/translator-overview).
 
+### About us
+The [Internet of Things Research (INTRES) Group](https://github.com/UWTINTRES)
+at the University of Washington Tacoma (UWT) developed and maintains this package to promote Internet of Things (IoT) research and teaching. This package seeks to accelerate the adoption of IoT concepts by developing a simple mechanism to increase the productivity of researchers, software engineers, developers, and data scientists.
+
 ### Features:
 These features are currently supported:
 1. Detect language
@@ -27,3 +31,6 @@ The config of the translator node is as follows. In this example, the text will 
 The output format is exactly from the official API document and is passed to the next node for further usage.
 
 ![Result](https://github.com/uwtintres/azure-translator/blob/main/img/result.png?raw=true)
+
+#### Disclaimer
+INTRES and UWT are not responsible for the usage or utilization of these packages. They are meant to promote IoT research and education. IoT service providers may require additional verification steps to utilize the features outlined in these packages. We are not in any way responsible for the misuse of these packages. For more details on the service agreement and terms, please click [here](https://azure.microsoft.com/en-us/support/legal/).
